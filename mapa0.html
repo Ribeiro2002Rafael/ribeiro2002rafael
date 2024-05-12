@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 <link rel="icon" type="img/rafaelribeiro.png" href="img/rafaelribeiro.png">
+	<title>Mapa 0 do trabalho de WebSIG</title>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+    <link rel="stylesheet" href="./js/leaflet.css"/>
+    <script src="./js/leaflet.js"></script>
+
+
+	<style>
+		html, body {
+			height: 100%;
+			margin: 0;
+		}
+		#map {
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+
+	<style>#map { width: 100%; height: 100%; }
+.info { padding: 6px 8px; font: 14px/16px Arial, Helvetica, sans-serif; background: white; background: rgba(255,255,255,0.8); box-shadow: 0 0 15px rgba(0,0,0,0.2); border-radius: 5px; } .info h4 { margin: 0 0 5px; color: #777; }
+.legend { text-align: left; line-height: 18px; color: #555; } .legend i { width: 18px; height: 18px; float: left; margin-right: 8px; opacity: 0.7; }</style>
+</head>
+<body>
+
+<div id='map'></div>
+
+<script type="text/javascript" src="./data/casospo10khab.geojson"></script>
+
+<script type="text/javascript">
+
+// get color depending on population density value 
+function getColor(d) { 
+return d > 30 ? '#800026' :
+ d > 17 ?  '#BD0026' : 
+ d > 10 ? '#E31A1C' : 
+ d > 5 ? '#FC4E2A' : 
+ d > 3 ? '#FD8D3C' : 
+ d > 2 ? '#FEB24C' :
+ d > 1 ?  '#FED976' :
+ d > 0 ?  '#FFEDA0' :
+ d = 0 ?   '#000000' :
+ '#FFFFFF'; }
+ function style(feature) { 
+return { 
+weight: 1, 
+opacity: 1, 
+color: 'white', 
+dashArray: '3', 
+fillOpacity: 1.0, 
+fillColor: getColor(feature.properties.Casos_23_1)
+ }; }
+
+var map = L.map('map').setView([39.696927, -7.729808], 6); L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', { attribution: 'Tiles © Esri — Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community' }).addTo(map);
+geojson = L.geoJson(Casos, {style: style }).addTo(map);
+</script>
+
+
+</body>
+</html>
