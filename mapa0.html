@@ -54,10 +54,10 @@ fillOpacity: 1.0,
 fillColor: getColor(feature.properties.Casos_23_1)
  }; }
 
-var map = L.map('map').setView([39.696927, -7.729808], 6); L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', { attribution: 'Tiles © Esri — Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community' }).addTo(map);
+var map = L.map('map').setView([39.696927, -7.729808], 6); mapabase = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', { attribution: 'Tiles © Esri — Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community' }).addTo(map);
 geojson = L.geoJson(Casos, {style: style }).addTo(map);
 var baseLayers = {
-    "Mapa": map,
+    "Mapa": mapabase,
 };,
 var overlays = {	
     "Casos por 10k habitantes": geojson
