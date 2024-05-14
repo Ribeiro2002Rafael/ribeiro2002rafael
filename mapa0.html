@@ -32,6 +32,9 @@
 
 <script type="text/javascript">
 
+var map = L.map('map').setView([39.696927, -7.729808], 6); mapabase = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', { attribution: 'Tiles © Esri — Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community' }).addTo(map);
+geojson = L.geoJson(Casos, {style: style }).addTo(map);
+
 // get color depending on population density value 
 function getColor(d) { 
 return d > 30 ? '#800026' :
@@ -54,8 +57,12 @@ fillOpacity: 1.0,
 fillColor: getColor(feature.properties.Casos_23_1)
  }; }
 
-var map = L.map('map').setView([39.696927, -7.729808], 6); mapabase = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', { attribution: 'Tiles © Esri — Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community' }).addTo(map);
-geojson = L.geoJson(Casos, {style: style }).addTo(map);
+var geojson = L.geoJson(casos, {style: style, 
+  onEachFeature: function (feature, layer) 
+ {layer.bindPopup('<h3>'+feature.properties.Concelho+'</h3><p>name: '+feature.properties.Casos_23_1'</p>');
+  }
+}).addTo(map);
+
 var baseLayers = {
     "Mapa": mapabase
 };
@@ -63,11 +70,6 @@ var overlays = {
     "Casos por 10k habitantes": geojson
 };
 L.control.layers(baseLayers, overlays).addTo(map);
-var geojson = L.geoJson(casos, {style: style 
-  onEachFeature: function (feature, layer) 
- {layer.bindPopup('<h3>'+feature.properties.Concelho+'</h3><p>name: '+feature.properties.Casos_23_1'</p>');
-  }
-}).addTo(map);
 </script>
 
 
