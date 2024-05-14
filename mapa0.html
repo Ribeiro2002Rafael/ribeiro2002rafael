@@ -58,7 +58,7 @@ var map = L.map('map').setView([39.696927, -7.729808], 6); mapabase = L.tileLaye
 geojson = L.geoJson(Casos, {style: style }).addTo(map);
 var baseLayers = {
     "Mapa": mapabase
-};,
+};
 var overlays = {	
     "Casos por 10k habitantes": geojson
 };
