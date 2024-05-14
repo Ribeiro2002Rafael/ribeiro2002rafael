@@ -59,7 +59,7 @@ fillColor: getColor(feature.properties.Casos_23_1)
 
 var geojson = L.geoJson(casos, {style: style, 
   onEachFeature: function (feature, layer) 
- {layer.bindPopup('<h3>'+feature.properties.Concelho+'</h3><p>name: '+feature.properties.Casos_23_1'</p>');
+ {layer.bindPopup('<h3>'+feature.properties.Concelho+'</h3><p>Número: '+feature.properties.Casos_23_1'</p>');
   }
 }).addTo(map);
 
