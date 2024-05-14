@@ -59,6 +59,7 @@ geojson = L.geoJson(Casos, {style: style }).addTo(map);
 var baseLayers = {
     "Mapa": map,
 };,
+var overlays = {	
     "Casos por 10k habitantes": geojson
 };
 L.control.layers(baseLayers, map).addTo(map);
