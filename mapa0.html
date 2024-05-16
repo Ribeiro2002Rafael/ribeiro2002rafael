@@ -59,12 +59,12 @@ function style(feature) {
  color: 'white',
  dashArray: '3',
  fillOpacity: 1.0,
- fillColor: getColor(feature.properties.Casos_23_1)
+ fillColor: getColor(feature.properties.Casos)
  }; }
 
 var geojson = L.geoJson(casos, {style: style,
 		onEachFeature: function (feature, layer)
-		{layer.bindPopup('<h3>'+feature.properties.Concelho+'</h3><p>Número: '+feature.properties.Casos_23_1+'</p>');
+		{layer.bindPopup('<h3>'+feature.properties.Concelho+'</h3><p>Número: '+feature.properties.Casos+'</p>');
 		}
 	 }).addTo(map);
 
