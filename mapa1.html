@@ -42,15 +42,11 @@ mapabase = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Wor
 
 // get color depending on population density value 
 function getColor(d) {
- return d > 30 ? '#800026' :
- d > 17 ? '#BD0026' :
- d > 10 ? '#E31A1C' :
- d > 5 ? '#FC4E2A' :
- d > 3 ? '#FD8D3C' :
- d > 2 ? '#FEB24C' :
- d > 1 ? '#FED976' :
- d > 0 ? '#FFEDA0' :
- d = 0 ? '#000000' :
+ return d > 607969 ? '#BD0026' :
+ d > 3876661 ? '#E31A1C' :
+ d > 7424389 ? '#FC4E2A' :
+ d > 10528226 ? '#FD8D3C' :
+ d > 143953092 ? '#FEB24C' :
          '#FFFFFF'; } 
 function style(feature) {
  return {
