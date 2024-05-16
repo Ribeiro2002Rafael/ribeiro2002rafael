@@ -4,14 +4,14 @@
     <link rel="icon" type="image/png" href="img/rafaelribeiro.png">
     <div align="right">
         <a href="https://ribeiro2002rafael.github.io/websig/">
-            <img src="img/igot.png">
+            <img src="img/igot.png" alt="Insta">
         </a>
     </div>
     <title>Teste</title>
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
+    
     <link rel="stylesheet" href="./js/leaflet.css"/>
     <script src="./js/leaflet.js"></script>
 
@@ -60,17 +60,13 @@
         }).addTo(map);
 
         // get color depending on population density value 
-        function getColor(d) {
-            return d > 30 ? '#800026' :
-                   d > 17 ? '#BD0026' :
-                   d > 10 ? '#E31A1C' :
-                   d > 5  ? '#FC4E2A' :
-                   d > 3  ? '#FD8D3C' :
-                   d > 2  ? '#FEB24C' :
-                   d > 1  ? '#FED976' :
-                   d > 0  ? '#FFEDA0' :
-                            '#FFFFFF'; 
-        }
+function getColor(d) {
+ return d > 607969 ? '#BD0026' :
+ d > 3876661 ? '#E31A1C' :
+ d > 7424389 ? '#FC4E2A' :
+ d > 10528226 ? '#FD8D3C' :
+ d > 143953092 ? '#FEB24C' :
+         '#FFFFFF'; } 
 
         function style(feature) {
             return {
