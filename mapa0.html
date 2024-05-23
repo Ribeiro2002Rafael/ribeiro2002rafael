@@ -47,17 +47,16 @@ function style2(feature) {
         color: 'black',
         weight: 2,
         opacity: 1,
-        fillColor: getColor2(feature.properties.NUTII_COD),
+        fillColor: getColor2(feature.properties.URBN_TYPE),
         fillOpacity: 0.5
     };
 }
 
-function getColor2(NUTII_COD) {
-    return NUTII_COD == 18 ? '#800026' :
-           NUTII_COD == 17  ? '#BD0026' :
-           NUTII_COD == 16  ? '#FC4E2A' :
-           NUTII_COD == 11 ? '#000000' :
-           NUTII_COD == 15  ? '#FED976' :
+function getColor2(URBN_TYPE) {
+    return URBN_TYPE == 1 ? '#800026' :
+           URBN_TYPE == 2  ? '#BD0026' :
+           URBN_TYPE == 3  ? '#FC4E2A' :
+           URBN_TYPE == 4 ? '#000000' :
                              '#FFFFFF';
 }
 
