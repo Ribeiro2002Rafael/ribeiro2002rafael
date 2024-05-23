@@ -92,7 +92,7 @@ var geojson = L.geoJson(casos, {style: style,
 var geojsonNut2 = L.geoJson(Nut2, {
     style: style2,
     onEachFeature: function (feature, layer) {
-        layer.bindPopup('<h3>' + feature.properties.NUTS_NAME + '</h3>');
+        layer.bindPopup('<h3>' + feature.properties.NUTS_NAME + '</h3>'<p>Número: '+feature.properties.URBN_TYPE+'</p>');
     }
 }).addTo(map);
 
