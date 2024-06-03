@@ -1,27 +1,18 @@
 /* css/home.css */
-
-/* Estilo padrão para todas as telas */
 body {
-    background-image: url(https://www.igot.ulisboa.pt/sites/default/files/styles/redes_sociais_landscape/public/images/imagem/2022-01/138-1b4b2e3ba17053eaac6c548e9f006a6d.jpg?h=9fd3d5ac&itok=smX8URVS);
-    background-size: cover; /* A imagem cobre toda a área do corpo */
-    background-repeat: no-repeat; /* A imagem não se repete */
-    background-position: center center; /* A imagem está centralizada */
-    background-attachment: fixed; /* A imagem de fundo fica fixa durante o scroll */
+    background-color: white; /* Cor de fundo padrão */
 }
 
-/* Estilo para dispositivos móveis */
 @media (max-width: 600px) {
     body {
         background-color: white; /* Cor de fundo para dispositivos móveis */
     }
-    .container {
-        width: 100%;
-        padding: 10px;
+
+    #desktop-menu {
+        display: none; /* Esconder o menu de desktop em telas menores */
     }
-    .menu {
-        display: none; /* Esconder o menu padrão em dispositivos móveis */
-    }
-    .mobile-menu {
-        display: block; /* Mostrar o menu móvel em dispositivos móveis */
+
+    #mobile-menu {
+        display: block; /* Mostrar o menu móvel em telas menores */
     }
 }
