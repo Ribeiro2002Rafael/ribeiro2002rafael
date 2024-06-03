@@ -1,0 +1,15 @@
+@media (max-width: 600px) {
+    body {
+        background-color: lightblue;
+    }
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+    .menu {
+        display: none;
+    }
+    .mobile-menu {
+        display: block;
+    }
+}
