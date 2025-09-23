@@ -1,0 +1,123 @@
+<meta charset="UTF-8"> 
+<meta name="description" content="Licenciado em PGT e aluno do mestrado de Mestrado em Sistemas de Informação Geográfica e Modelação Territorial aplicados ao Ordenamento no IGOT-UL. Entre Mafra e Torres Vedras e sou Presidente da MAG @aeigot" />
+    <link rel="stylesheet" href="./js/home.css"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="./js/home.js"></script>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="img/rafaelribeiro.png" href="img/rafaelribeiro.png">
+<style>
+    ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+    li {
+  display: inline;
+}</style>
+    <ul>
+<li><A HREF="https://ribeiro2002rafael.github.io/ribeiro2002rafael/">Home</a></li>
+<!--<li><A HREF="https://ribeiro2002rafael.github.io/websig/mapa0.html"> Mapa 0</a></li>
+<li><A HREF="https://ribeiro2002rafael.github.io/websig/mapa1.html"> Mapa 1</a></li>-->
+<li><A HREF="https://ribeiro2002rafael.github.io/ribeiro2002rafael/salario.hmtl">Descontos Salariais</a></li>
+<li><A HREF="https://ribeiro2002rafael.github.io/ribeiro2002rafael/Local Caches.py">Python para o Local Cache do Arcgis</a></li>
+<li><DIV ALIGN="RIGHT"><IMG src=img/rafaelribeiro.png height="100"><br><B><H1>Rafael Ribeiro</H1></B></DIV></li>
+</ul>
+<head>	 <!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .instagram-wrapper {
+            max-width: 100%;
+            margin: 0 auto;
+        }
+        .instagram-media {
+            width: 100%;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+  <h2>Cálculo de Desconto Salarial</h2>
+  <form id="formDesconto">
+    <label>
+      Retribuição Mensal (€): 
+      <input type="number" id="retribuicaoMensal" required>
+    </label>
+    <br><br>
+
+    <label>
+      Nº de dias em falta: 
+      <input type="number" id="diasFalta" required>
+    </label>
+    <br><br>
+
+    <label>
+      Regime:
+      <select id="regime">
+        <option value="publico">Público (35h)</option>
+        <option value="privado">Privado (40h)</option>
+      </select>
+    </label>
+    <br><br>
+
+    <button type="submit">Calcular</button>
+  </form>
+
+  <h3>Resultado:</h3>
+  <pre id="resultado"></pre>
+
+  <script>
+    function calcularDesconto(diasFalta, retribuicaoMensal, regime) {
+      const horasSemanais = regime === "publico" ? 35 : 40;
+      const horasDia = 7;
+
+      const valorHora = (retribuicaoMensal * 12) / (52 * horasSemanais);
+      const valorDia = valorHora * horasDia;
+
+      const descontoRetribuicao = valorDia * diasFalta;
+      const salarioFinal = retribuicaoMensal - descontoRetribuicao;
+
+      return {
+        salario_base: Number(retribuicaoMensal.toFixed(2)),
+        valor_hora: Number(valorHora.toFixed(2)),
+        valor_dia: Number(valorDia.toFixed(2)),
+        desconto_retribuicao: Number(descontoRetribuicao.toFixed(2)),
+        salario_final: Number(salarioFinal.toFixed(2))
+      };
+    }
+
+    document.getElementById("formDesconto").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const retribuicaoMensal = parseFloat(document.getElementById("retribuicaoMensal").value);
+      const diasFalta = parseInt(document.getElementById("diasFalta").value, 10);
+      const regime = document.getElementById("regime").value;
+
+      const resultado = calcularDesconto(diasFalta, retribuicaoMensal, regime);
+
+      let output = "";
+      for (const [key, value] of Object.entries(resultado)) {
+        output += `${key}: ${value} €\n`;
+      }
+
+      document.getElementById("resultado").textContent = output;
+    });
+  </script>
+</body>
+  <div style="text-align: center; margin-top: 20px;">
+    <a href="https://www.linkedin.com/in/ribeiro2002rafael/" target="_blank" rel="noopener noreferrer">
+      LinkedIn
+    </a>
+  </div>
+</body>
+</html>
+
+
+
+
+
