@@ -1,10 +1,11 @@
 /* ---------- Importar Montserrat ---------- */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
-/* ---------- Variáveis de cores ---------- */
+/* ---------- Cores e fontes ---------- */
 :root {
   --cor-texto: #000000;
   --cor-fundo: #ffffff;
+  --cor-acento: #222222;
 }
 
 /* ---------- Reset / base ---------- */
@@ -14,85 +15,103 @@
   box-sizing: border-box;
 }
 
-html, body {
+body {
+  font-family: 'Montserrat', sans-serif;
   background-color: var(--cor-fundo);
   color: var(--cor-texto);
-  font-family: 'Montserrat', sans-serif;
   line-height: 1.6;
   font-size: 16px;
 }
 
-/* ---------- Cabeçalhos ---------- */
-h1, h2, h3, h4, h5, h6 {
-  color: var(--cor-texto);
-  margin-bottom: 0.5em;
-  font-weight: 600;
-}
-
-h1 {
-  font-size: 2.5rem;
-}
-
-h2 {
-  font-size: 2rem;
-}
-
-h3 {
-  font-size: 1.75rem;
-}
-
-/* ---------- Parágrafos, listas, links ---------- */
-p, ul, ol, li {
-  color: var(--cor-texto);
-  margin-bottom: 1em;
-}
-
-a {
-  color: var(--cor-texto);
-  text-decoration: none;
-  border-bottom: 1px solid var(--cor-texto);
-  transition: background-color 0.3s ease;
-}
-
-a:hover {
-  background-color: rgba(0,0,0,0.05);
-}
-
-/* ---------- Container / layout ---------- */
+/* ---------- Layout principal ---------- */
 .container {
   width: 90%;
-  max-width: 800px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 2rem 0;
 }
 
-/* ---------- Navegação (menu) ---------- */
+/* ---------- Cabeçalho ---------- */
+header {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+/* ---------- Navegação ---------- */
 nav {
-  margin-bottom: 2rem;
+  margin-top: 1rem;
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  gap: 1.5rem;
-}
-
-nav ul li {
-  display: inline-block;
+  justify-content: center;
+  gap: 2rem;
 }
 
 nav ul li a {
   font-weight: 500;
-  padding: 0.5rem;
+  text-decoration: none;
+  color: var(--cor-texto);
+  padding: 0.3rem 0.6rem;
+  transition: background 0.3s;
 }
 
-/* ---------- Imagens ---------- */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 1rem 0;
+nav ul li a:hover {
+  background-color: #f5f5f5;
+  border-radius: 6px;
 }
 
-/* ----------*
+/* ---------- Secções ---------- */
+section {
+  margin: 3rem 0;
+}
 
+section h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  border-left: 4px solid var(--cor-acento);
+  padding-left: 0.6rem;
+}
+
+section p {
+  margin-bottom: 1rem;
+}
+
+/* ---------- Cards (para listas ou projetos) ---------- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* ---------- Rodapé ---------- */
+footer {
+  text-align: center;
+  padding: 1.5rem 0;
+  border-top: 1px solid #ddd;
+  font-size: 0.9rem;
+  margin-top: 3rem;
+}
