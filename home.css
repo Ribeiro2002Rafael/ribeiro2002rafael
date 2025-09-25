@@ -44,29 +44,58 @@ header h1 {
 }
 
 /* ---------- Navegação ---------- */
+/* Navbar fixa */
 nav {
-  margin-top: 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 1000;
 }
 
-nav ul {
-  list-style: none;
+/* Lista horizontal */
+.navbar {
   display: flex;
-  justify-content: center;
-  gap: 2rem;
+  align-items: center;
+  justify-content: flex-start;
+  list-style: none;
+  margin: 0;
+  padding: 10px 20px;
 }
 
-nav ul li a {
-  font-weight: 500;
+/* Links */
+.navbar li a {
   text-decoration: none;
-  color: var(--cor-texto);
-  padding: 0.3rem 0.6rem;
-  transition: background 0.3s;
+  color: #333;
+  font-weight: 600;
+  margin: 0 15px;
+  transition: color 0.3s ease;
 }
 
-nav ul li a:hover {
-  background-color: #f5f5f5;
-  border-radius: 6px;
+.navbar li a:hover {
+  color: #0077b6;
 }
+
+/* Logo à direita */
+.navbar .logo {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.navbar .logo img {
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.navbar .logo span {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #023e8a;
+}
+
 
 /* ---------- Secções ---------- */
 section {
